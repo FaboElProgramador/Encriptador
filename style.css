@@ -78,10 +78,18 @@ textarea {
 }
 
 footer {
+    border-radius: 5px;
     display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
     align-items: center;
-    justify-content: center; /* Centra horizontalmente el contenido */
+    justify-content: center; /* Centra verticalmente el contenido */
     padding: 20px;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .autor {
