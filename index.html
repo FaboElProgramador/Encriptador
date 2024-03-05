@@ -21,30 +21,34 @@
     <main>
 
         <div class="row">
-       
-        <div class="caja-izquierda col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <textarea id="texto-izquierda" placeholder="Escribe aqui..." oninput="ocultarTextoAdvertencia()"></textarea>
-            <button id="btn-encriptar" class="btn-encriptar" type="button" onclick="encriptarTexto()">Encriptar</button>
-            <button id="btn-desencriptar" class="btn-desencriptar" type="button" onclick="desencriptarTexto()">Desencriptar</button>
-            <p id="textnotfound" class="texto-advertencia">
-                <span>"Ningún mensaje fue encontrado"</span>
-                <br>
-                <span>"Ingresa el texto que deseas encriptar o desencriptar."</span>
-            </p>
-        </div>      
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="caja-izquierda">
+                    <textarea id="texto-izquierda" placeholder="Escribe aqui..." oninput="ocultarTextoAdvertencia()"></textarea>
+                    <button id="btn-encriptar" class="btn-encriptar" type="button" onclick="encriptarTexto()">Encriptar</button>
+                    <button id="btn-desencriptar" class="btn-desencriptar" type="button" onclick="desencriptarTexto()">Desencriptar</button>
+                    <p id="textnotfound" class="texto-advertencia">
+                        <span>"Ningún mensaje fue encontrado"</span>
+                        <br>
+                        <span>"Ingresa el texto que deseas encriptar o desencriptar."</span>
+                    </p>
+                </div>
+            </div>             
     
-        <div class="caja-derecha col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <textarea id="texto-derecha" readonly></textarea>
-                <button id="btn-copiar" class="btn-copiar" onclick="copiarTexto()">Copiar</button>
-                <button id="btn-vaciar" class="btn-vaciar" onclick="vaciarTexto()">Vaciar</button>
-        </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="caja-derecha">
+                    <textarea id="texto-derecha" readonly></textarea>
+                    <button id="btn-copiar" class="btn-copiar" onclick="copiarTexto()">Copiar</button>
+                    <button id="btn-vaciar" class="btn-vaciar" onclick="vaciarTexto()">Vaciar</button>
+                </div>    
+            </div>
+        </div> 
         
     </main>
     
 
     <footer>
-        <p class="autor">Fabian Vazquez | 2024</p><a class="github" href="https://github.com/FaboElProgramador" target="_blank"><img class="github" src="img/social.png" alt="Logo-github"></a>
-        <a href="https://www.linkedin.com/in/fabian-vazquez-bb9b2628b/" target="_blank"> <img class="linkedin" src="img/linkedin.png" alt="Logo-linkedin"> </a>
+        <p class="autor">Fabian Vazquez | 2024</p><a class="github" href="https://github.com/FaboElProgramador" target="_blank" rel="noopener noreferrer"><img class="github" src="img/social.png" alt="Logo-github"></a>
+        <a href="https://www.linkedin.com/in/fabian-vazquez-bb9b2628b/" target="_blank" rel="noopener noreferrer"> <img class="linkedin" src="img/linkedin.png" alt="Logo-linkedin"> </a>
     </footer>
 
     <script src="app.js"></script>

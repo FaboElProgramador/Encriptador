@@ -1,4 +1,9 @@
-function encriptar(letra) {
+// Almacenar los elementos del DOM en variables
+const textoIzquierda = document.getElementById('texto-izquierda');
+const textoDerecha = document.getElementById('texto-derecha');
+const textoAdvertencia = document.getElementById('textnotfound');
+
+const encriptar = letra => {
     const reemplazo = {
         'a': 'ai',
         'e': 'enter',
@@ -9,7 +14,7 @@ function encriptar(letra) {
     return reemplazo[letra] || letra;
 }
 
-function desencriptar(match) {
+const desencriptar = match => {
     const sustitucion = {
         'ai': 'a',
         'enter': 'e',
@@ -21,28 +26,27 @@ function desencriptar(match) {
 }
 
 function encriptarTexto() {
-    const textoParaCambiar = document.getElementById('texto-izquierda').value;
+    const textoParaCambiar = textoIzquierda.value;
     var regex = /^[a-z\s\d!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]+$/; // Letras minúsculas, espacios y otros caracteres especiales
     if (!regex.test(textoParaCambiar)) {
         alert('El texto debe contener solo letras minúsculas, sin acentos ni mayúsculas.');
-        document.getElementById('texto-izquierda').value = "";
+        textoIzquierda.value = "";
     } else {
         let textoEncriptado = textoParaCambiar.replace(/[aeiou]/g, encriptar); 
-        document.getElementById('texto-derecha').value = textoEncriptado; 
+        textoDerecha.value = textoEncriptado; 
     }
 }
 
 function desencriptarTexto() {
-    const textoParaDesencriptar = document.getElementById('texto-izquierda').value;
+    const textoParaDesencriptar = textoIzquierda.value;
     const textoDesencriptado = textoParaDesencriptar.replace(/ai|enter|imes|ober|ufat/g, desencriptar);
-    document.getElementById('texto-derecha').value = textoDesencriptado;
+    textoDerecha.value = textoDesencriptado;
 }
 
 function ocultarTextoAdvertencia() {
-    var textoIzquierda = document.getElementById('texto-izquierda').value;
-    var textoAdvertencia = document.getElementById('textnotfound');
+    var textoIzquierdaValue = textoIzquierda.value;
     
-    if (textoIzquierda.trim() !== '') {
+    if (textoIzquierdaValue.trim() !== '') {
         textoAdvertencia.style.display = 'none';
     } else {
         textoAdvertencia.style.display = 'block';
@@ -50,8 +54,8 @@ function ocultarTextoAdvertencia() {
 }
 
 function copiarTexto() {
-    var textoDerecha = document.getElementById('texto-derecha').value;
-    navigator.clipboard.writeText(textoDerecha)
+    var textoDerechaValue = textoDerecha.value;
+    navigator.clipboard.writeText(textoDerechaValue)
         .then(function() {
             alert('Texto copiado!');
         })
@@ -61,7 +65,7 @@ function copiarTexto() {
 }
 
 function vaciarTexto() {
-    document.getElementById('texto-izquierda').value = '';
-    document.getElementById('texto-derecha').value = '';
+    textoIzquierda.value = '';
+    textoDerecha.value = '';
     ocultarTextoAdvertencia(); // Llamar a la función para que aparezca el texto de advertencia
 }

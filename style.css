@@ -1,7 +1,7 @@
 body {  
 margin: 0 auto; 
 padding: 0;
-background-image: url('img/imagen\ encrip.jpg');
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/encriptador\ fondo.jpg');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -21,26 +21,15 @@ color: wheat;
 text-shadow: 8px 8px 16px rgb(0, 0, 0);
 }
 
-main {
-    display: flex; 
+.row {
+    width: 100%;
 }
 
-.row{width: -webkit-fill-available;}
-
 .caja-izquierda,.caja-derecha {
-    width: 50%;
-    margin: 20px;
+    margin: 5px;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.8);
-}
-
-.caja-izquierda {
-    float: left; /* cambbio de prueba */
-}
-
-.caja-derecha {
-    float: right;
 }
 
 .texto-advertencia{
@@ -101,4 +90,11 @@ footer {
     width: 30px;
     height: 30px;
     margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .caja-izquierda,.caja-derecha {
+        margin: 10px;
+        padding: 10px;
+    }
 }
