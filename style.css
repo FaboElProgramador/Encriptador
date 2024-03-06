@@ -86,6 +86,19 @@ textarea {
     transform: scale(1)
 }
 
+.my-popup {
+    background-color: rgb(233, 0, 241);
+    color: wheat;
+}
+
+.mi-popup-personalizado {
+    background-color:  rgb(233, 0, 241);
+}
+.mi-titulo-personalizado,
+.mi-contenido-personalizado {
+    color: wheat;
+}
+
 footer {
     font-size: 14px;
     font-family: "Roboto Mono", monospace;

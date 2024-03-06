@@ -23,24 +23,35 @@ const desencriptar = match => {
     };
     return sustitucion[match] || match;
 }
+
 //Funcion encriptar
 function encriptarTexto() {
     const textoParaCambiar = textoIzquierda.value;
     var regex = /^[a-z\s\d!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]+$/; // Letras minúsculas, espacios y otros caracteres especiales
     if (!regex.test(textoParaCambiar)) {
-        alert('El texto debe contener solo letras minúsculas, sin acentos ni mayúsculas.');
+        Swal.fire({
+            title: 'Error!',
+            text: 'El texto debe contener solo letras minúsculas, sin acentos ni mayúsculas.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            customClass: {
+                popup: 'my-popup'
+            }
+        });
         textoIzquierda.value = "";
     } else {
         let textoEncriptado = textoParaCambiar.replace(/[aeiou]/g, encriptar); 
         textoDerecha.value = textoEncriptado; 
     }
 }
+
 //Funcion desencriptar
 function desencriptarTexto() {
     const textoParaDesencriptar = textoIzquierda.value;
     const textoDesencriptado = textoParaDesencriptar.replace(/ai|enter|imes|ober|ufat/g, desencriptar);
     textoDerecha.value = textoDesencriptado;
 }
+
 //Funcion ocultar texto
 function ocultarTextoAdvertencia() {
     var textoIzquierdaValue = textoIzquierda.value;
@@ -51,17 +62,28 @@ function ocultarTextoAdvertencia() {
         textoAdvertencia.style.display = 'block';
     }
 }
+
 //Funcion copiar texto
 function copiarTexto() {
     var textoDerechaValue = textoDerecha.value;
     navigator.clipboard.writeText(textoDerechaValue)
         .then(function() {
-            alert('Texto copiado!');
+            Swal.fire({
+                title: '¡Copiado!',
+                text: 'El texto ha sido copiado al portapapeles.',
+                icon: 'success',
+                customClass: {
+                    popup: 'mi-popup-personalizado',
+                    title: 'mi-titulo-personalizado',
+                    content: 'mi-contenido-personalizado'
+                }
+            });
         })
         .catch(function(err) {
             console.error('Error al copiar el texto: ', err);
         });
 }
+
 //Función vaciar texto
 function vaciarTexto() {
     textoIzquierda.value = '';
