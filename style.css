@@ -39,12 +39,14 @@ text-shadow: 8px 8px 16px rgb(0, 0, 0);
 }
 
 .texto-advertencia{
+    text-align: center;
     font-family: "Roboto Mono", monospace;
     display: block;
     font-size: 14px;
     color: wheat;
+    padding: 8px;
     margin-top: 10px;
-    background: linear-gradient(45deg, rgb(162, 0, 165), transparent);
+    background: linear-gradient(4deg, rgb(162, 0, 165), transparent);
 }
 
 textarea {
