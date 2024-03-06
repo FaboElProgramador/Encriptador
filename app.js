@@ -1,4 +1,3 @@
-// Almacenar los elementos del DOM en variables
 const textoIzquierda = document.getElementById('texto-izquierda');
 const textoDerecha = document.getElementById('texto-derecha');
 const textoAdvertencia = document.getElementById('textnotfound');
@@ -24,7 +23,7 @@ const desencriptar = match => {
     };
     return sustitucion[match] || match;
 }
-
+//Funcion encriptar
 function encriptarTexto() {
     const textoParaCambiar = textoIzquierda.value;
     var regex = /^[a-z\s\d!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]+$/; // Letras minúsculas, espacios y otros caracteres especiales
@@ -36,13 +35,13 @@ function encriptarTexto() {
         textoDerecha.value = textoEncriptado; 
     }
 }
-
+//Funcion desencriptar
 function desencriptarTexto() {
     const textoParaDesencriptar = textoIzquierda.value;
     const textoDesencriptado = textoParaDesencriptar.replace(/ai|enter|imes|ober|ufat/g, desencriptar);
     textoDerecha.value = textoDesencriptado;
 }
-
+//Funcion ocultar texto
 function ocultarTextoAdvertencia() {
     var textoIzquierdaValue = textoIzquierda.value;
     
@@ -52,7 +51,7 @@ function ocultarTextoAdvertencia() {
         textoAdvertencia.style.display = 'block';
     }
 }
-
+//Funcion copiar texto
 function copiarTexto() {
     var textoDerechaValue = textoDerecha.value;
     navigator.clipboard.writeText(textoDerechaValue)
@@ -63,9 +62,9 @@ function copiarTexto() {
             console.error('Error al copiar el texto: ', err);
         });
 }
-
+//Función vaciar texto
 function vaciarTexto() {
     textoIzquierda.value = '';
     textoDerecha.value = '';
-    ocultarTextoAdvertencia(); // Llamar a la función para que aparezca el texto de advertencia
+    ocultarTextoAdvertencia(); 
 }
